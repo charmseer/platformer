@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMace : MonoBehaviour
-{   
+{
+    [SerializeField] private float amplitude = 2;
     private Vector3 startPos;
 
     // Start is called before the first frame update
@@ -15,6 +16,6 @@ public class EnemyMace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = startPos + new Vector3(0f, Mathf.Sin(Time.time),0f);
+        transform.position = startPos + amplitude * new Vector3(0f, Mathf.Sin(Time.time),0f);
     }
 }
